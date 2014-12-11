@@ -31,7 +31,7 @@ class AppNamesController < ApplicationController
 
     motto = pun && pun.new_phrase
     original_phrase = pun && pun.original_phrase
-    render text: [result, motto, original_phrase].compact.join("; ")
+    render text: [result.gsub(/\s/,''), motto, original_phrase].compact.join("; ")
   end
 
   def show

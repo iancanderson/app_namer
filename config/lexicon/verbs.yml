@@ -1,4 +1,11 @@
 "buy":
+  prefixes:
+    - buy
+  suffixes:
+    - depot
+    - mart
+    - shop
+    - store
 "communicate with":
   prefixes:
     - contact
