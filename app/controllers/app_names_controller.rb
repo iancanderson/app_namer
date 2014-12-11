@@ -40,41 +40,25 @@ private
   end
 
   def synonyms_for(english_spelling)
-    word = Word.find_by(
-      english_spelling: english_spelling,
-      lexical_category: "noun"
-    )
+    spelling = EnglishSpelling.find_by(spelling: english_spelling) ||
+      create_spelling(english_spelling)
 
-    if word
-      word.synonyms || []
-    else
-      noun = create_words(english_spelling)
-      noun.synonyms || []
-    end
+    spelling.noun_synonyms || []
   end
 
-  def create_words(english_spelling)
-    result = Dinosaurus.lookup(english_spelling)
+  def create_spelling(spelling)
+    result = Dinosaurus.lookup(spelling)
     noun_attributes = result["noun"] || {}
-
-    noun = Word.create!(
-      english_spelling: english_spelling,
-      lexical_category: "noun",
-      synonyms: noun_attributes["syn"],
-      related: noun_attributes["rel"],
-      antonyms: noun_attributes["ant"]
-    )
-
     verb_attributes = result["verb"] || {}
 
-    Word.create!(
-      english_spelling: english_spelling,
-      lexical_category: "verb",
-      synonyms: verb_attributes["syn"],
-      related: verb_attributes["rel"],
-      antonyms: verb_attributes["ant"]
+    EnglishSpelling.create!(
+      spelling: spelling,
+      noun_synonyms: noun_attributes["syn"],
+      noun_related: noun_attributes["rel"],
+      noun_antonyms: noun_attributes["ant"],
+      verb_synonyms: verb_attributes["syn"],
+      verb_related: verb_attributes["rel"],
+      verb_antonyms: verb_attributes["ant"]
     )
-
-    noun
   end
 end

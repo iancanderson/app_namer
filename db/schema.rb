@@ -32,16 +32,18 @@ ActiveRecord::Schema.define(version: 20141211184559) do
 
   add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
 
-  create_table "words", force: true do |t|
-    t.string   "english_spelling", null: false
-    t.string   "lexical_category", null: false
-    t.string   "synonyms",                      array: true
-    t.string   "related",                       array: true
-    t.string   "antonyms",                      array: true
+  create_table "english_spellings", force: true do |t|
+    t.string   "spelling",      null: false
+    t.string   "noun_synonyms",              array: true
+    t.string   "noun_related",               array: true
+    t.string   "noun_antonyms",              array: true
+    t.string   "verb_synonyms",              array: true
+    t.string   "verb_related",               array: true
+    t.string   "verb_antonyms",              array: true
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "words", ["english_spelling", "lexical_category"], name: "index_words_on_english_spelling_and_lexical_category", unique: true, using: :btree
+  add_index "english_spellings", ["spelling"], name: "index_english_spellings_on_spelling", unique: true, using: :btree
 
 end
