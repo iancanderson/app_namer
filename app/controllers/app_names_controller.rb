@@ -29,12 +29,9 @@ class AppNamesController < ApplicationController
       rhymes: spelling.rhymes
     )
 
-    motto = pun && pun.new_phrase
-    original_phrase = pun && pun.original_phrase
-    render text: [result.gsub(/\s/,''), motto, original_phrase].compact.join("; ")
-  end
-
-  def show
+    @app_name = result.gsub(/\s/,'')
+    @motto = pun && pun.new_phrase
+    @original_phrase = pun && pun.original_phrase
   end
 
 private
