@@ -1,6 +1,6 @@
 class AppNamesController < ApplicationController
   def new
-    @verbs = load_verbs
+    @verbs = load_verbs.sort
   end
 
   def create
