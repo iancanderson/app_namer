@@ -1,3 +1,4 @@
+"buy":
 "communicate with":
   prefixes:
     - contact
@@ -15,25 +16,6 @@
     - informer
     - publisher
     - sharer
-"find":
-  prefixes:
-    - eureka!
-    - search
-  suffixes:
-    - beacon
-    - detective
-    - digger
-    - eureka
-    - finder
-    - focus
-    - holmes
-    - oracle
-    - searcher
-    - scry
-    - sherlock
-    - trove
-  patterns:
-    - "%{keyword}chimedes"
 "create":
   prefixes:
     - forge
@@ -66,8 +48,25 @@
   patterns:
     - "%{keyword}ception"
     - "%{keyword}ventor"
-
-"buy":
+"find":
+  prefixes:
+    - eureka!
+    - search
+  suffixes:
+    - beacon
+    - detective
+    - digger
+    - eureka
+    - finder
+    - focus
+    - holmes
+    - oracle
+    - searcher
+    - scry
+    - sherlock
+    - trove
+  patterns:
+    - "%{keyword}chimedes"
 "listen":
 "organize":
 "pay":
