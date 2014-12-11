@@ -1,5 +1,6 @@
-PATH
-  remote: ../girls_just_want_to_have_puns
+GIT
+  remote: https://iancanderson@bitbucket.org/iancanderson/girls_just_want_to_have_puns.git
+  revision: 43fd3edc6bac21a5f78ec85edf2a3bb46586156c
   specs:
     girls_just_want_to_have_puns (0.0.1)
       nokogiri (>= 1.5.5)
