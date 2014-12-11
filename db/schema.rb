@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141211184559) do
+ActiveRecord::Schema.define(version: 20141211210843) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 20141211184559) do
     t.string   "verb_antonyms",              array: true
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "rhymes",                     array: true
   end
 
   add_index "english_spellings", ["spelling"], name: "index_english_spellings_on_spelling", unique: true, using: :btree

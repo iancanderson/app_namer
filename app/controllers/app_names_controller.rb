@@ -12,7 +12,9 @@ class AppNamesController < ApplicationController
     # 1.) Find a synonym for the verb
     verb_synonym = verbs[params[:verb]][prefix_or_suffix].sample.titleize
     # 2.) Find a synonym for the direct object
-    direct_object_synonym = synonym_for(params[:direct_object]).singularize.titleize
+    spelling = find_or_create_spelling(params[:direct_object].singularize)
+
+    direct_object_synonym = spelling.random_noun_synonym
     # 3.) Punnnnnify some stuff
     # 4.) Combine
     # 5.) Profit
@@ -21,7 +23,11 @@ class AppNamesController < ApplicationController
              when "suffixes" then "#{direct_object_synonym}#{verb_synonym}"
     end
 
-    pun = GirlsJustWantToHavePuns.puns(params[:direct_object]).sample
+    pun = GirlsJustWantToHavePuns.puns(
+      params[:direct_object],
+      rhymes: spelling.rhymes
+    ).sample
+
     motto = pun.new_phrase
     original_phrase = pun.original_phrase
     render text: [result, motto, original_phrase].join("; ")
@@ -35,21 +41,16 @@ private
     @verbs = YAML.load(File.open("config/lexicon/verbs.yml"))
   end
 
-  def synonym_for(word)
-    synonyms_for(word).sample
-  end
-
-  def synonyms_for(english_spelling)
-    spelling = EnglishSpelling.find_by(spelling: english_spelling) ||
-      create_spelling(english_spelling)
-
-    spelling.noun_synonyms || []
+  def find_or_create_spelling(english_spelling)
+    EnglishSpelling.find_by(spelling: english_spelling) || create_spelling(english_spelling)
   end
 
   def create_spelling(spelling)
     result = Dinosaurus.lookup(spelling)
     noun_attributes = result["noun"] || {}
     verb_attributes = result["verb"] || {}
+
+    rhymes = RhymeService.new(spelling).rhymes
 
     EnglishSpelling.create!(
       spelling: spelling,
@@ -58,7 +59,8 @@ private
       noun_antonyms: noun_attributes["ant"],
       verb_synonyms: verb_attributes["syn"],
       verb_related: verb_attributes["rel"],
-      verb_antonyms: verb_attributes["ant"]
+      verb_antonyms: verb_attributes["ant"],
+      rhymes: rhymes
     )
   end
 end
