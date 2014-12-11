@@ -29,6 +29,8 @@ class AppNamesController < ApplicationController
       rhymes: spelling.rhymes
     )
 
+    @verb = params[:verb]
+    @keyword = params[:direct_object]
     @app_name = result.gsub(/\s/,'')
     @motto = pun && pun.new_phrase
     @original_phrase = pun && pun.original_phrase
