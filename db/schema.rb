@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141211175206) do
+ActiveRecord::Schema.define(version: 20141211184559) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,5 +31,17 @@ ActiveRecord::Schema.define(version: 20141211175206) do
   end
 
   add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority", using: :btree
+
+  create_table "words", force: true do |t|
+    t.string   "english_spelling", null: false
+    t.string   "lexical_category", null: false
+    t.string   "synonyms",                      array: true
+    t.string   "related",                       array: true
+    t.string   "antonyms",                      array: true
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "words", ["english_spelling", "lexical_category"], name: "index_words_on_english_spelling_and_lexical_category", unique: true, using: :btree
 
 end

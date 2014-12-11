@@ -1,0 +1,68 @@
+"communicates with":
+  prefixes:
+    - contact
+    - inform
+    - share
+  suffixes:
+    - base
+    - cast
+    - caster
+    - connect
+    - connext
+    - contact
+    - inform
+    - informant
+    - informer
+    - publisher
+    - sharer
+"finds":
+  prefixes:
+    - eureka!
+    - search
+  suffixes:
+    - beacon
+    - detective
+    - digger
+    - eureka
+    - finder
+    - focus
+    - holmes
+    - oracle
+    - searcher
+    - scry
+    - sherlock
+    - trove
+  patterns:
+    - "%{keyword}chimedes"
+"creates":
+  prefixes:
+    - forge
+    - invent
+    - make
+  suffixes:
+    - artist
+    - constructor
+    - creator
+    - fabricate
+    - factory
+    - farm
+    - forge
+    - foundry
+    - inception
+    - inventor
+    - kiln
+    - lab
+    - machine
+    - maker
+    - mint
+    - origin
+    - shop
+    - smith
+    - source
+    - studio
+    - works
+    - workshop
+    - yard
+  patterns:
+    - "%{keyword}ception"
+    - "%{keyword}ventor"
