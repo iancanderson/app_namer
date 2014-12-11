@@ -3,7 +3,7 @@
 <h2>What does your app do?</h2>
 
 <%= form_tag app_names_path, class: "app_names_form" do %>
-  <p>It lets you</p>
+  It lets you
   <%= select_tag "verb", options_for_select(@verbs) %>
   <%= text_field_tag "direct_object" %>
   <%= submit_tag "Generate app name!" %>
