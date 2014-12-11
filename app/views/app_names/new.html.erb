@@ -1,10 +1,10 @@
-<h1>(insert appp name here)</h1>
+<!-- <h1>(insert appp name here)</h1> -->
 
 <h2>What does your app do?</h2>
 
-<%= form_tag app_names_path do %>
-  It
+<%= form_tag app_names_path, class: "app_names_form" do %>
+  <p>It lets you</p>
   <%= select_tag "verb", options_for_select(@verbs) %>
   <%= text_field_tag "direct_object" %>
-  <%= submit_tag "Generate" %>
+  <%= submit_tag "Generate app name!" %>
 <% end %>
