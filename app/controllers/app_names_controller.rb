@@ -12,9 +12,10 @@ class AppNamesController < ApplicationController
     # 1.) Find a synonym for the verb
     verb_synonym = verbs[params[:verb]][prefix_or_suffix].sample.titleize
     # 2.) Find a synonym for the direct object
+
     spelling = find_or_create_spelling(params[:direct_object].singularize)
 
-    direct_object_synonym = spelling.random_noun_synonym
+    direct_object_synonym = spelling.random_noun_synonym.titleize
     # 3.) Punnnnnify some stuff
     # 4.) Combine
     # 5.) Profit
@@ -23,14 +24,14 @@ class AppNamesController < ApplicationController
              when "suffixes" then "#{direct_object_synonym}#{verb_synonym}"
     end
 
-    pun = GirlsJustWantToHavePuns.puns(
+    pun = GirlsJustWantToHavePuns.pun(
       params[:direct_object],
       rhymes: spelling.rhymes
-    ).sample
+    )
 
-    motto = pun.new_phrase
-    original_phrase = pun.original_phrase
-    render text: [result, motto, original_phrase].join("; ")
+    motto = pun && pun.new_phrase
+    original_phrase = pun && pun.original_phrase
+    render text: [result, motto, original_phrase].compact.join("; ")
   end
 
   def show
