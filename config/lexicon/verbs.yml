@@ -1,4 +1,4 @@
-"communicates with":
+"communicate with":
   prefixes:
     - contact
     - inform
@@ -15,7 +15,7 @@
     - informer
     - publisher
     - sharer
-"finds":
+"find":
   prefixes:
     - eureka!
     - search
@@ -34,7 +34,7 @@
     - trove
   patterns:
     - "%{keyword}chimedes"
-"creates":
+"create":
   prefixes:
     - forge
     - invent
@@ -66,3 +66,12 @@
   patterns:
     - "%{keyword}ception"
     - "%{keyword}ventor"
+
+"buy":
+"listen":
+"organize":
+"pay":
+"read":
+"share":
+"store":
+"watch":
