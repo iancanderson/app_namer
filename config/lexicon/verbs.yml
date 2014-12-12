@@ -68,6 +68,7 @@
     - "%{keyword}ventor"
 "find":
   prefixes:
+    - discover
     - eureka!
     - search
   suffixes:
@@ -75,6 +76,7 @@
     - detective
     - digger
     - eureka
+    - explorer
     - finder
     - focus
     - holmes
@@ -112,9 +114,20 @@
     - check
     - wallet
 "read":
+  prefixes:
+    - book
+    - discover
+    - study
+    - word
+  suffixes:
+    - book
+    - interpreter
+    - library
+    - papyrus
+    - scanner
+    - study
 "share":
 "store":
-  prefixes:
   suffixes:
     - box
     - file
@@ -122,9 +135,11 @@
 "watch":
   prefixes:
     - check out
+    - decipher
     - glimpse
     - look
     - reflect
+    - retina
     - see
     - show
     - view
