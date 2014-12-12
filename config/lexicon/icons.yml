@@ -1,0 +1,172 @@
+"buy":
+  icons:
+    - fa-cc-discover
+    - fa-cc-visa
+    - fa-google-wallet
+    - fa-cc-mastercard
+    - fa-paypal
+    - fa-cc
+    - fa-cc-paypal
+    - fa-cc-amex
+    - fa-cc-stripe
+    - fa-home
+    - fa-university
+    - fa-barcode
+    - fa-coffee
+    - fa-gift
+    - fa-gift
+    - fa-btc
+    - fa-eur
+    - fa-gbp
+    - fa-ils
+    - fa-inr
+    - fa-jpy
+    - fa-krw
+    - fa-money
+    - fa-rub
+    - fa-try
+    - fa-usd
+    - fa-building
+    - fa-tag
+    - fa-shopping-cart
+"communicate with":
+  icons:
+    - fa-comments-o
+    - fa-globe
+    - fa-beer
+    - fa-phone
+    - fa-bullhorn
+    - fa-comment
+    - fa-mobile
+    - fa-phone-square
+    - fa-quote-left
+    - fa-quote-right
+    - fa-rss
+    - fa-envelope
+    - fa-envelope-o
+    - fa-envelope-square
+    - fa-group
+    - fa-inbox
+"create":
+  icons:
+    - fa-rocket
+    - fa-paint-brush
+    - fa-pencil
+    - fa-flask
+"find":
+  icons:
+    - fa-location-arrow
+    - fa-map-marker
+    - fa-compass
+    - fa-crosshairs
+    - fa-dot-circle-o
+    - fa-bookmark-o
+    - fa-binoculars
+    - fa-bullseye
+    - fa-eye
+"listen to":
+  icons:
+    - fa-headphones
+    - fa-arrows-alt
+    - fa-backward
+    - fa-compress
+    - fa-eject
+    - fa-expand
+    - fa-fast-backward
+    - fa-fast-forward
+    - fa-forward
+    - fa-pause
+    - fa-play
+    - fa-play-circle
+    - fa-play-circle-o
+    - fa-step-backward
+    - fa-step-forward
+    - fa-stop
+    - fa-file-audio
+    - fa-file-audio-o
+    - fa-microphone
+"organize":
+  icons:
+    - fa-area-chart
+    - fa-bar-chart
+    - fa-line-chart
+    - fa-pie-chart
+    - fa-building
+    - fa-share
+    - fa-smile-o
+    - fa-dashboard
+"pay":
+  icons:
+    - fa-tag
+    - fa-cc-discover
+    - fa-cc-visa
+    - fa-google-wallet
+    - fa-cc-mastercard
+    - fa-paypal
+    - fa-cc
+    - fa-cc-paypal
+    - fa-cc-amex
+    - fa-cc-stripe
+    - fa-home
+    - fa-university
+    - fa-barcode
+    - fa-coffee
+    - fa-gift
+    - fa-gift
+    - fa-btc
+    - fa-eur
+    - fa-gbp
+    - fa-ils
+    - fa-inr
+    - fa-jpy
+    - fa-krw
+    - fa-money
+    - fa-rub
+    - fa-try
+    - fa-usd
+    - fa-shopping-cart
+"read":
+  icons:
+    - fa-book
+    - fa-bookmark
+    - fa-bookmark-o
+"share":
+  icons:
+    - fa-smile-o
+    - fa-share
+    - fa-share-alt
+"store":
+  icons:
+    - fa-building
+    - fa-home
+    - fa-shield
+    - fa-archive
+    - fa-database
+"watch":
+  icons:
+    - fa-arrows-alt
+    - fa-backward
+    - fa-compress
+    - fa-eject
+    - fa-expand
+    - fa-fast-backward
+    - fa-fast-forward
+    - fa-forward
+    - fa-pause
+    - fa-play
+    - fa-play-circle
+    - fa-play-circle-o
+    - fa-step-backward
+    - fa-step-forward
+    - fa-stop
+    - fa-video-camera
+    - fa-picture-o
+"consult on":
+  icons:
+    - fa-area-chart
+    - fa-bar-chart
+    - fa-line-chart
+    - fa-pie-chart
+    - fa-cloud
+    - fa-puzzle-piece
+    - fa-question

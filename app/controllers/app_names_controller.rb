@@ -26,12 +26,16 @@ class AppNamesController < ApplicationController
         verb: params[:verb]
       )
 
+      icons = load_icons
+      icon = icons[params[:verb]]["icons"].sample
+
       redirect_to app_name_url(
         app_name: app_name.name,
         direct_object: params[:direct_object],
         original_pun_phrase: pun && pun.original_phrase,
         tagline: pun && pun.new_phrase,
-        verb: params[:verb]
+        verb: params[:verb],
+        icon: icon
       )
     end
   end
@@ -42,11 +46,16 @@ class AppNamesController < ApplicationController
     @original_pun_phrase = params[:original_pun_phrase]
     @tagline = params[:tagline]
     @verb = params[:verb]
+    @icon = params[:icon]
   end
 
 private
   def load_verbs
-    @verbs = YAML.load(File.open("config/lexicon/verbs.yml"))
+    YAML.load(File.open("config/lexicon/verbs.yml"))
+  end
+
+  def load_icons
+    YAML.load(File.open("config/lexicon/icons.yml"))
   end
 
   def find_or_create_spelling(english_spelling)

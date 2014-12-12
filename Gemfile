@@ -9,6 +9,7 @@ gem "delayed_job_active_record"
 gem "dinosaurus"
 gem "email_validator"
 gem "flutie"
+gem "font-awesome-rails"
 gem "girls_just_want_to_have_puns", git: "https://github.com/iancanderson/girls_just_want_to_have_puns.git"
 gem "high_voltage"
 gem "i18n-tasks"
@@ -22,10 +23,10 @@ gem "rails", "4.1.8"
 gem "recipient_interceptor"
 gem "sass-rails", "~> 4.0.3"
 gem "simple_form"
+gem "stripe", git: "https://github.com/stripe/stripe-ruby"
 gem "title"
 gem "uglifier"
 gem "unicorn"
-gem 'stripe', git: "https://github.com/stripe/stripe-ruby"
 
 group :development do
   gem "better_errors"
@@ -57,4 +58,4 @@ end
 group :staging, :production do
 end
 
-gem 'rails_12factor', group: :production
+gem "rails_12factor", group: :production
