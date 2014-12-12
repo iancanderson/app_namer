@@ -127,6 +127,13 @@
     - scanner
     - study
 "share":
+  prefixes:
+    - friend
+    - social
+  suffixes:
+    - baton
+    - community
+    - giver
 "store":
   suffixes:
     - box
@@ -137,6 +144,7 @@
     - check out
     - decipher
     - glimpse
+    - know
     - look
     - reflect
     - retina
