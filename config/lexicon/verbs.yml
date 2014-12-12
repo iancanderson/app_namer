@@ -74,6 +74,7 @@
     - searcher
     - scry
     - sherlock
+    - sleuth
     - trove
   patterns:
     - "%{keyword}chimedes"
