@@ -1,14 +1,17 @@
-<!-- <h1>(insert appp name here)</h1> -->
+<div class="hero">
+  <div class="hero-inner">
+    <h2>What does your app do?</h2>
+    <br/>
 
-<h2>What does your app do?</h2>
-
-<%= form_tag app_names_path, class: "app_names_form" do %>
-  It lets you
-  <%= select_tag "verb", options_for_select(@verbs) %>
-  <%= text_field_tag "direct_object" %>
-  <%= submit_tag "Generate app name!" %>
-  <%= submit_tag "I'm feeling lucky!" %>
-<% end %>
+    <%= form_tag app_names_path, class: "app_names_form" do %>
+      It lets you
+      <%= select_tag "verb", options_for_select(@verbs) %>
+      <%= text_field_tag "direct_object" %>
+      <%= submit_tag "Generate app name!" %>
+      <%= submit_tag "I'm feeling lucky!" %>
+    <% end %>
+  </div>
+</div>
 
 <%= javascript_tag do %>
   function updatePlaceholder() {

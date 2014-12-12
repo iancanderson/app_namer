@@ -8,6 +8,10 @@
 @import 'hero';
 @import 'font-awesome';
 
+html, body {
+  height: 100%;
+}
+
 div.container {
   @include outer-container;
 }
