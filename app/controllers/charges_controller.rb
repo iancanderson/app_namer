@@ -32,13 +32,17 @@ class ChargesController < ApplicationController
       verb: cookies["verb"]
     )
 
+    icons = load_icons
+    icon = icons[params[:verb]]["icons"].sample
+
     redirect_to app_name_url(
       app_name: app_name.name,
       direct_object: cookies["direct_object"],
       original_pun_phrase: pun && pun.original_phrase,
       tagline: pun && pun.new_phrase,
       verb: cookies["verb"],
-      purchased: "yes"
+      purchased: "yes",
+      icon: icon
     )
   rescue Stripe::CardError => e
     flash[:error] = e.message
@@ -49,6 +53,10 @@ private
 
   def load_verbs
     @verbs = YAML.load(File.open("config/lexicon/verbs.yml"))
+  end
+
+  def load_icons
+    YAML.load(File.open("config/lexicon/icons.yml"))
   end
 
   def find_or_create_spelling(english_spelling)

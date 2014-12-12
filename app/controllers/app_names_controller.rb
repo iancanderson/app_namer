@@ -49,13 +49,7 @@ class AppNamesController < ApplicationController
     @tagline = params[:tagline]
     @verb = params[:verb]
     @icon = params[:icon]
-
-    if params[:purchased] == "yes"
-      @purchased = true
-      @domains_available = Domainr.search(@app_name).results.first(3)
-    else
-      @purchased = false
-    end
+    @domains_available = Domainr.search(@app_name).results.first(3)
   end
 
 private
