@@ -1,5 +1,5 @@
 GIT
-  remote: https://iancanderson@bitbucket.org/iancanderson/girls_just_want_to_have_puns.git
+  remote: https://github.com/iancanderson/girls_just_want_to_have_puns.git
   revision: 32744147f970ed6cfe347d50dd331e9b43b93f88
   specs:
     girls_just_want_to_have_puns (0.0.1)
