@@ -2,7 +2,7 @@ require "domainr"
 
 class AppNamesController < ApplicationController
   def new
-    @verbs = load_verbs.sort
+    @verbs = load_verbs.keys.sort
   end
 
   def create
