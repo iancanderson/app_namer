@@ -1,0 +1,17 @@
+<h1>Cached Spellings</h1>
+<table>
+  <tr>
+    <th>Spelling</th>
+    <th>Rhymes</th>
+    <th>Noun Synonyms</th>
+    <th>Verb Synonyms</th>
+  </tr>
+<% EnglishSpelling.all.each do |spelling| %>
+  <tr>
+    <td><%= spelling.spelling %></td>
+    <td><%= spelling.rhymes.try(:join, ", ") %></td>
+    <td><%= spelling.noun_synonyms.try(:join, ", ") %></td>
+    <td><%= spelling.verb_synonyms.try(:join, ", ") %></td>
+  </tr>
+<% end %>
+</table>
