@@ -24,8 +24,15 @@
       <%= javascript_tag do %>
         $.getJSON("/domain_availability?app_name=<%= @app_name %>", function(data) {
           var domains = [];
+          var iconClass = "";
+          var domainRegisterLink = "";
+
           $.each(data, function(key, val) {
-          domains.push("<li><em>" + val.domain + "</em> <span>(available: " + val.availability + ") <a href='" + val.register_url + "'>click here to register</a></span></li>")
+            if(val.availability === "available"){ iconClass = "fa-check-square-o"; domainRegisterLink = "<a href='" + val.register_url + "'>click here to register</a>"; }
+            if(val.availability === "maybe"){ iconClass = "fa-question"; domainRegisterLink = "<a href='" + val.register_url + "'>click here to register</a>"; }
+            if(val.availability === "taken"){ iconClass = "fa-remove"; }
+
+            domains.push("<li><em>" + val.domain + "</em> <span> <i class='fa " + iconClass + "'></i> " + domainRegisterLink + "</span></li>")
           });
 
           $( "<ul/>", {
