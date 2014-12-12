@@ -10,6 +10,10 @@
       <% end %>
       <p>We can't wait to try <%= @app_name %> so we can <%= @verb %> <%= @direct_object %></p>
     </div>
-    <button>Learn More</button>
+    <%= form_tag app_names_path, class: "app_names_form" do %>
+      <%= hidden_field_tag :verb, @verb %>
+      <%= hidden_field_tag :direct_object, @direct_object %>
+      <%= submit_tag "Try Again" %>
+    <% end %>
   </div>
 </div>
