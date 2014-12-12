@@ -29,6 +29,7 @@ class AppNamesController < ApplicationController
 
     pun = GirlsJustWantToHavePuns.pun(
       params[:direct_object],
+      minimum_word_count: 5,
       rhymes: spelling.rhymes
     )
 

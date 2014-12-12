@@ -1,6 +1,6 @@
 GIT
   remote: https://iancanderson@bitbucket.org/iancanderson/girls_just_want_to_have_puns.git
-  revision: bb54aab02ade6bcaf6451a3fafe60d06a62abbb7
+  revision: 3a9306b804551e35c82665d4b842cb1544a1d246
   specs:
     girls_just_want_to_have_puns (0.0.1)
       nokogiri (>= 1.5.5)
