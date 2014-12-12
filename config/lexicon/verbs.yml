@@ -77,7 +77,7 @@
     - trove
   patterns:
     - "%{keyword}chimedes"
-"listen":
+"listen to":
   prefixes:
     - ear
   suffixes:
@@ -93,6 +93,12 @@
     - folder
     - journal
 "pay":
+  suffixes:
+    - bank
+    - banker
+    - cash
+    - check
+    - wallet
 "read":
 "share":
 "store":
