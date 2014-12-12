@@ -6,7 +6,7 @@
     <th>Noun Synonyms</th>
     <th>Verb Synonyms</th>
   </tr>
-<% EnglishSpelling.all.each do |spelling| %>
+<% @spellings.each do |spelling| %>
   <tr>
     <td><%= spelling.spelling %></td>
     <td><%= spelling.rhymes.try(:join, ", ") %></td>
