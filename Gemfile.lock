@@ -1,6 +1,6 @@
 GIT
   remote: https://iancanderson@bitbucket.org/iancanderson/girls_just_want_to_have_puns.git
-  revision: 43fd3edc6bac21a5f78ec85edf2a3bb46586156c
+  revision: bb54aab02ade6bcaf6451a3fafe60d06a62abbb7
   specs:
     girls_just_want_to_have_puns (0.0.1)
       nokogiri (>= 1.5.5)
@@ -40,6 +40,12 @@ GEM
       multi_json
     arel (5.0.1.20140414130214)
     awesome_print (1.2.0)
+    better_errors (2.0.0)
+      coderay (>= 1.0.0)
+      erubis (>= 2.6.6)
+      rack (>= 0.9.0)
+    binding_of_caller (0.7.2)
+      debug_inspector (>= 0.0.1)
     bourbon (3.2.3)
       sass (~> 3.2)
       thor
@@ -72,6 +78,7 @@ GEM
     crack (0.4.2)
       safe_yaml (~> 1.0.0)
     database_cleaner (1.3.0)
+    debug_inspector (0.0.2)
     debugger-linecache (1.2.0)
     delayed_job (4.0.4)
       activesupport (>= 3.0, < 4.2)
@@ -246,6 +253,8 @@ PLATFORMS
 DEPENDENCIES
   airbrake
   awesome_print
+  better_errors
+  binding_of_caller
   bourbon (~> 3.2.1)
   bundler-audit
   byebug

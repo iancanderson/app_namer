@@ -8,7 +8,10 @@ class AppNamesController < ApplicationController
     # params[:direct_object]
     verbs = load_verbs
 
-    prefix_or_suffix = %w[prefixes suffixes].sample
+    prefix_or_suffix = %w[prefixes suffixes].select do |mode|
+      verbs[params[:verb]][mode].present?
+    end.sample
+
     # 1.) Find a synonym for the verb
     verb_synonym = verbs[params[:verb]][prefix_or_suffix].sample.titleize
     # 2.) Find a synonym for the direct object

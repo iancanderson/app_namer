@@ -2,9 +2,12 @@
   prefixes:
     - buy
   suffixes:
+    - bodega
+    - boutique
     - depot
     - mart
     - shop
+    - shoppe
     - store
 "communicate with":
   prefixes:
@@ -75,9 +78,27 @@
   patterns:
     - "%{keyword}chimedes"
 "listen":
+  prefixes:
+    - ear
+  suffixes:
+    - ear
+    - phone
+    - radio
+    - stereo
 "organize":
+  suffixes:
+    - book
+    - box
+    - file
+    - folder
+    - journal
 "pay":
 "read":
 "share":
 "store":
+  prefixes:
+  suffixes:
+    - box
+    - file
+    - folder
 "watch":

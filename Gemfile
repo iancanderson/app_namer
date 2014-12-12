@@ -27,6 +27,8 @@ gem "uglifier"
 gem "unicorn"
 
 group :development do
+  gem "better_errors"
+  gem "binding_of_caller"
   gem "bundler-audit"
   gem "spring"
   gem "spring-commands-rspec"
