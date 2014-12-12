@@ -11,3 +11,10 @@ div.container {
   @include outer-container;
 }
 
+p.tagline {
+  font-style: italic;
+}
+
+p#pun-description {
+  font-size: 80%;
+}
