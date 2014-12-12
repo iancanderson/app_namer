@@ -25,6 +25,7 @@ gem "simple_form"
 gem "title"
 gem "uglifier"
 gem "unicorn"
+gem 'stripe', git: "https://github.com/stripe/stripe-ruby"
 
 group :development do
   gem "better_errors"

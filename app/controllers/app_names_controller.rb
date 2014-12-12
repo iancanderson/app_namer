@@ -4,27 +4,36 @@ class AppNamesController < ApplicationController
   end
 
   def create
-    spelling = find_or_create_spelling(params[:direct_object].singularize.split(" ").last)
+    if params[:commit] == "I'm feeling lucky!"
+      params.each do |key, value|
+        cookies["#{key}"] = value
+      end
 
-    pun = GirlsJustWantToHavePuns.pun(
-      params[:direct_object],
-      minimum_word_count: 3,
-      rhymes: spelling.rhymes
-    )
+      @charge_amount = Random.rand(1...500)*100
+      render "stripe_charge"
+    else
+      spelling = find_or_create_spelling(params[:direct_object].singularize.split(" ").last)
 
-    app_name = AppNameGenerator.generate(
-      direct_object: params[:direct_object],
-      spelling: spelling,
-      verb: params[:verb]
-    )
+      pun = GirlsJustWantToHavePuns.pun(
+        params[:direct_object],
+        minimum_word_count: 3,
+        rhymes: spelling.rhymes
+      )
 
-    redirect_to app_name_url(
-      app_name: app_name.name,
-      direct_object: params[:direct_object],
-      original_pun_phrase: pun && pun.original_phrase,
-      tagline: pun && pun.new_phrase,
-      verb: params[:verb]
-    )
+      app_name = AppNameGenerator.generate(
+        direct_object: params[:direct_object],
+        spelling: spelling,
+        verb: params[:verb]
+      )
+
+      redirect_to app_name_url(
+        app_name: app_name.name,
+        direct_object: params[:direct_object],
+        original_pun_phrase: pun && pun.original_phrase,
+        tagline: pun && pun.new_phrase,
+        verb: params[:verb]
+      )
+    end
   end
 
   def show
