@@ -12,13 +12,15 @@
       <p>We can't wait to try <%= @app_name %> so we can <%= @verb %> <%= @direct_object %>!</p>
     </div>
 
-    <%= form_tag app_names_path, class: "app_names_form" do %>
+    <%= form_tag app_names_path, class: "ib app_names_form" do %>
       <%= hidden_field_tag :verb, @verb %>
       <%= hidden_field_tag :direct_object, @direct_object %>
-      <%= submit_tag "Try Again" %>
+      <%= submit_tag "Rename This App", class: "buttons"%>
     <% end %>
 
-    <%= link_to "Name a different app", root_path %>
+    <div class="ib">
+      <%= button_to "Name A Different App", root_path, class: "buttons", method: :get %>
+    </div>
 
     <div class="domain-listing">
       <%= javascript_tag do %>
