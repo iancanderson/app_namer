@@ -92,6 +92,7 @@
     - audio
     - ear
     - radio
+    - i
   suffixes:
     - audio
     - ear
@@ -168,3 +169,6 @@
     - TV
     - viewer
     - watcher
+"consult on":
+  patterns:
+    - "%{keyword}bot"
