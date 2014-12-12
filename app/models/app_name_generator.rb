@@ -12,7 +12,7 @@ class AppNameGenerator
   def generate
     verbs = load_verbs
 
-    prefix_or_suffix = %w[prefixes suffixes].select do |mode|
+    prefix_or_suffix = %w[prefixes suffixes suffixes patterns].select do |mode|
       verbs[@verb][mode].present?
     end.sample
 
@@ -27,6 +27,7 @@ class AppNameGenerator
     result = case prefix_or_suffix
       when "prefixes" then "#{verb_synonym}#{direct_object_synonym}"
       when "suffixes" then "#{direct_object_synonym}#{verb_synonym}"
+      when "patterns" then verb_synonym.downcase % { keyword: direct_object_synonym }
     end
 
     AppName.new(name: result.gsub(/\s/,''))
