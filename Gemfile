@@ -55,3 +55,5 @@ end
 
 group :staging, :production do
 end
+
+gem 'rails_12factor', group: :production
