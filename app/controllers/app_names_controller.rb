@@ -44,7 +44,6 @@ class AppNamesController < ApplicationController
     @tagline = params[:tagline]
     @verb = params[:verb]
     @icon = params[:icon]
-    @domains_available = Domainr.search(@app_name).results.first(3)
   end
 
 private

@@ -21,18 +21,21 @@
     <%= link_to "Name a different app", root_path %>
 
     <div class="domain-listing">
-      <h3>Register your domain name:</h3>
-      <hr>
-      <% @domains_available.each do |domain| %>
-        <div class="domain-listing">
-          Domain: <em><%= domain["domain"] %></em><br>
-          Available: <%= domain["availability"].upcase %><br>
-          <% if domain["availability"] != "taken" %>
-            <b class="red"><%= link_to "Register Now!", domain["register_url"] %></b>
-          <% end %>
-          <hr>
-        </div>
+      <%= javascript_tag do %>
+        $.getJSON("/domain_availability?app_name=<%= @app_name %>", function(data) {
+          var domains = [];
+          $.each(data, function(key, val) {
+          domains.push("<li><em>" + val.domain + "</em> <span>(available: " + val.availability + ") <a href='" + val.register_url + "'>click here to register</a></span></li>")
+          });
+
+          $( "<ul/>", {
+              "class": "domain-listing",
+              html: domains.join( "" )
+            }).appendTo( "#domains" );
+        });
       <% end %>
+      <div id="domains">
+      </div>
     </div>
   </div>
 </div>

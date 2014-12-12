@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   resources :app_names, only: [:create]
   resources :charges
 
+
+  get "domain_availability", to: "domain_availabilities#show"
   get "app_name", to: "app_names#show"
 end

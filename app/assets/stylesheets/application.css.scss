@@ -29,10 +29,12 @@ p#pun-description {
 }
 
 .domain-listing {
+  span {
+    font-variant: small-caps;
+  }
+
   a {
     color: pink;
     text-decoration: none;
   }
-
-  text-align: left;
 }
