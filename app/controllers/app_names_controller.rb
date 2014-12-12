@@ -33,11 +33,21 @@ class AppNamesController < ApplicationController
       rhymes: spelling.rhymes
     )
 
+    redirect_to app_name_url(
+      app_name: result.gsub(/\s/,''),
+      direct_object: params[:direct_object],
+      original_pun_phrase: pun && pun.original_phrase,
+      tagline: pun && pun.new_phrase,
+      verb: params[:verb],
+    )
+  end
+
+  def show
+    @app_name = params[:app_name]
+    @direct_object = params[:direct_object]
+    @original_pun_phrase = params[:original_pun_phrase]
+    @tagline = params[:tagline]
     @verb = params[:verb]
-    @keyword = params[:direct_object]
-    @app_name = result.gsub(/\s/,'')
-    @motto = pun && pun.new_phrase
-    @original_phrase = pun && pun.original_phrase
   end
 
 private

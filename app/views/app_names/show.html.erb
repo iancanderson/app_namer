@@ -4,11 +4,11 @@
       " alt="Logo Image"></a>
     <div class="hero-copy">
       <h1><%= @app_name %></h1>
-      <p><%= @motto %></p>
-      <% if @original_phrase %>
-        <p>(pun of "<%= @original_phrase %>")</p>
+      <p><%= @tagline %></p>
+      <% if @original_pun_phrase %>
+        <p>(pun of "<%= @original_pun_phrase %>")</p>
       <% end %>
-      <p>We can't wait to try <%= @app_name %> so we can <%= @verb %> <%= @keyword %></p>
+      <p>We can't wait to try <%= @app_name %> so we can <%= @verb %> <%= @direct_object %></p>
     </div>
     <button>Learn More</button>
   </div>
