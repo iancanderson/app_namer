@@ -37,7 +37,8 @@ class ChargesController < ApplicationController
       direct_object: cookies["direct_object"],
       original_pun_phrase: pun && pun.original_phrase,
       tagline: pun && pun.new_phrase,
-      verb: cookies["verb"]
+      verb: cookies["verb"],
+      purchased: "yes"
     )
   rescue Stripe::CardError => e
     flash[:error] = e.message
