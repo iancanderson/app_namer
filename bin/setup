@@ -31,6 +31,8 @@ if ! command -v foreman > /dev/null; then
   printf 'See https://github.com/ddollar/foreman for install instructions.\n'
 fi
 
-# Only if this isn't CI
-# if [ -z "$CI" ]; then
-# fi
+# Add Heroku remotes
+git remote add production git@heroku.com:app-namer-production.git
+
+# Join the apps
+heroku join --app app-namer-production
