@@ -4,7 +4,7 @@ class AppNamesController < ApplicationController
   end
 
   def create
-    spelling = find_or_create_spelling(params[:direct_object].singularize)
+    spelling = find_or_create_spelling(params[:direct_object].singularize.split(" ").last)
 
     pun = GirlsJustWantToHavePuns.pun(
       params[:direct_object],
@@ -49,7 +49,7 @@ private
     noun_attributes = result["noun"] || {}
     verb_attributes = result["verb"] || {}
 
-    rhymes = RhymeService.new(spelling).rhymes
+    rhymes = RhymeService.new(spelling.split(" ").last).rhymes
 
     EnglishSpelling.create!(
       spelling: spelling,

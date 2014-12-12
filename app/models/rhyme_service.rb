@@ -21,7 +21,8 @@ class RhymeService
   private
 
   def fetch_rhymes
-    open("http://rhymebrain.com/talk?function=getRhymes&word=#{@keyword}&maxResults=0&lang=en").read
+    word = URI::encode(@keyword)
+    open("http://rhymebrain.com/talk?function=getRhymes&word=#{word}&maxResults=0&lang=en").read
   end
 
 end
