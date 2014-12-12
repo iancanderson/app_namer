@@ -120,3 +120,28 @@
     - file
     - folder
 "watch":
+  prefixes:
+    - check out
+    - glimpse
+    - look
+    - reflect
+    - see
+    - show
+    - view
+  suffixes:
+    - eye
+    - focus
+    - gazer
+    - glasses
+    - inspector
+    - portal
+    - mirror
+    - reflector
+    - scanner
+    - scope
+    - screen
+    - seer
+    - tube
+    - TV
+    - viewer
+    - watcher
