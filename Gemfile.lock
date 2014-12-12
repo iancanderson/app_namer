@@ -1,5 +1,11 @@
 GIT
   remote: https://github.com/iancanderson/girls_just_want_to_have_puns.git
+  revision: 32744147f970ed6cfe347d50dd331e9b43b93f88
+  specs:
+    girls_just_want_to_have_puns (0.0.1)
+      nokogiri (>= 1.5.5)
+
+GIT
   remote: https://github.com/stripe/stripe-ruby
   revision: 9c7ebd21c97358d1329abdbd91628dbf970d314f
   specs:
@@ -7,13 +13,6 @@ GIT
       json (~> 1.8.1)
       mime-types (>= 1.25, < 3.0)
       rest-client (~> 1.4)
-
-GIT
-  remote: https://iancanderson@bitbucket.org/iancanderson/girls_just_want_to_have_puns.git
-  revision: 32744147f970ed6cfe347d50dd331e9b43b93f88
-  specs:
-    girls_just_want_to_have_puns (0.0.1)
-      nokogiri (>= 1.5.5)
 
 GEM
   remote: https://rubygems.org/
