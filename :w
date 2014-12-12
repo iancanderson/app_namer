@@ -1,8 +1,0 @@
-<%= form_tag charges_path do %>
-  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-allow-remember-me="false"
-          data-description="Your new app name"
-          data-amount="<%= @charge_amount %>"></script>
-<% end %>
-<%= javascript_tag "$('button[type='submit']').click();" %>
