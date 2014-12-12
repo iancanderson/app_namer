@@ -20,7 +20,21 @@
 
     <%= link_to "Name a different app", root_path %>
 
-    <%= if @purchased %>
+    <% if @purchased %>
+      <div class="domain-listing">
+        <h3>Register your domain name:</h3>
+        <hr>
+        <% @domains_available.each do |domain| %>
+          <div class="domain-listing">
+            Domain: <em><%= domain["domain"] %></em><br>
+            Available: <%= domain["availability"].upcase %><br>
+            <% if domain["availability"] != "taken" %>
+              <b class="red"><%= link_to "Register Now!", domain["register_url"] %></b>
+            <% end %>
+            <hr>
+          </div>
+        <% end %>
+      </div>
     <% end %>
   </div>
 </div>
