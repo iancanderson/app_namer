@@ -1,14 +1,22 @@
 "buy":
   prefixes:
     - buy
+    - e
+    - shop
+    - thrifty
   suffixes:
+    - bazaar
     - bodega
     - boutique
+    - buy
     - depot
+    - exchange
+    - hub
     - mart
     - shop
     - shoppe
     - store
+    - warehouse
 "communicate with":
   prefixes:
     - contact
