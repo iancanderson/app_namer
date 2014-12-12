@@ -4,28 +4,7 @@ class AppNamesController < ApplicationController
   end
 
   def create
-    # params[:verb]
-    # params[:direct_object]
-    verbs = load_verbs
-
-    prefix_or_suffix = %w[prefixes suffixes].select do |mode|
-      verbs[params[:verb]][mode].present?
-    end.sample
-
-    # 1.) Find a synonym for the verb
-    verb_synonym = verbs[params[:verb]][prefix_or_suffix].sample.titleize
-    # 2.) Find a synonym for the direct object
-
     spelling = find_or_create_spelling(params[:direct_object].singularize)
-
-    direct_object_synonym = spelling.random_noun_synonym.titleize
-    # 3.) Punnnnnify some stuff
-    # 4.) Combine
-    # 5.) Profit
-    result = case prefix_or_suffix
-             when "prefixes" then "#{verb_synonym}#{direct_object_synonym}"
-             when "suffixes" then "#{direct_object_synonym}#{verb_synonym}"
-    end
 
     pun = GirlsJustWantToHavePuns.pun(
       params[:direct_object],
@@ -33,12 +12,18 @@ class AppNamesController < ApplicationController
       rhymes: spelling.rhymes
     )
 
+    app_name = AppNameGenerator.generate(
+      direct_object: params[:direct_object],
+      spelling: spelling,
+      verb: params[:verb]
+    )
+
     redirect_to app_name_url(
-      app_name: result.gsub(/\s/,''),
+      app_name: app_name.name,
       direct_object: params[:direct_object],
       original_pun_phrase: pun && pun.original_phrase,
       tagline: pun && pun.new_phrase,
-      verb: params[:verb],
+      verb: params[:verb]
     )
   end
 
