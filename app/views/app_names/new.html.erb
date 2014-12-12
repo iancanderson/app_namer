@@ -9,3 +9,13 @@
   <%= submit_tag "Generate app name!" %>
   <%= submit_tag "I'm feeling lucky!" %>
 <% end %>
+
+<%= javascript_tag do %>
+  function updatePlaceholder() {
+    var placeholder = $(".app_names_form select").val() + " what?";
+    $("#direct_object").attr("placeholder", placeholder);
+  }
+
+  $(".app_names_form select").change(updatePlaceholder);
+  updatePlaceholder();
+<% end %>
