@@ -82,18 +82,21 @@
     - searcher
     - scry
     - sherlock
-    - sleuth
     - trove
   patterns:
     - "%{keyword}chimedes"
 "listen to":
   prefixes:
+    - audio
     - ear
+    - radio
   suffixes:
+    - audio
     - ear
     - phone
     - radio
     - stereo
+    - tune
 "organize":
   suffixes:
     - book
