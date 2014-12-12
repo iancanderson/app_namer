@@ -4,7 +4,7 @@
     <br/>
 
     <%= form_tag app_names_path, class: "app_names_form" do %>
-      It lets you
+      <span class="itletsyou">It lets you</span>
       <%= select_tag "verb", options_for_select(@verbs) %>
       <%= text_field_tag "direct_object" %>
       <%= submit_tag "Generate app name!" %>
