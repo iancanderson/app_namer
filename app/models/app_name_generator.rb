@@ -20,7 +20,10 @@ class AppNameGenerator
     verb_synonym = verbs[@verb][prefix_or_suffix].sample.titleize
     # 2.) Find a synonym for the direct object
 
-    direct_object_synonym = @spelling.random_noun_synonym.titleize
+    direct_object_synonym = @spelling.random_synonym
+    return AppName.new(name: "Nameless") unless direct_object_synonym
+
+    direct_object_synonym = direct_object_synonym.titleize
     # 3.) Punnnnnify some stuff
     # 4.) Combine
     # 5.) Profit

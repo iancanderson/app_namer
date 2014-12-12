@@ -35,6 +35,8 @@ class AppNamesController < ApplicationController
         icon: icon
       )
     end
+  rescue => e
+    render text: e.message + "\n" + e.backtrace.join("\n ")
   end
 
   def show
