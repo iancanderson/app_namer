@@ -15,12 +15,7 @@ class AppNamesController < ApplicationController
       render "stripe_charge"
     else
       spelling = find_or_create_spelling(params[:direct_object].singularize.split(" ").last)
-
-      pun = GirlsJustWantToHavePuns.pun(
-        params[:direct_object],
-        minimum_word_count: 3,
-        rhymes: spelling.rhymes
-      )
+      pun = generate_pun(spelling)
 
       app_name = AppNameGenerator.generate(
         direct_object: params[:direct_object],
@@ -82,5 +77,17 @@ private
       verb_antonyms: verb_attributes["ant"],
       rhymes: rhymes
     )
+  end
+
+  def generate_pun(spelling)
+    if spelling.rhymes.any?
+      GirlsJustWantToHavePuns.pun(
+        params[:direct_object],
+        minimum_word_count: 3,
+        rhymes: spelling.rhymes
+      )
+    else
+      nil
+    end
   end
 end

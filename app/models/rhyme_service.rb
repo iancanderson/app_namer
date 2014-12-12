@@ -9,6 +9,8 @@ class RhymeService
 
   def rhymes
     rhyme_hashes = JSON.parse(fetch_rhymes)
+    return [] if rhyme_hashes.empty?
+
     max_score = rhyme_hashes.max_by { |r| r['score'] }['score']
 
     rhyme_hashes.select do |r|
